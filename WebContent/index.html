@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>CSCE 156 Album App</title>
+    
+	<script src="lib/jquery-2.1.4.min.js"></script>
+    
+    <link rel="stylesheet" href="lib/bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-3.3.5/css/bootstrap-theme.min.css">    
+    <script src="lib/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    
+	<script src="js/albumTable.js"></script>
+
+  </head>
+<body class="container">
+
+<div class="container">
+
+  <div class="jumbotron">
+   <h1>Online Album Organizer</h1>
+    <div id="errMsgArea"></div>
+    <p>This is an album organizer app used in CSCE 156 (as well as 156H and RAIK 184H).</p>    
+  </div>
+  
+<div class="container">
+ <div class="col-md-offset-1 col-md-8">
+  <table id="albumTable" class="table table-striped table-bordered table-hover">
+    <thead>
+	  <tr>
+  	    <th>Title</th>
+    	<th>Band</th>
+	    <th>Release Year</th>
+	  </tr> 
+    </thead>
+    <tbody></tbody>
+  </table>
+
+<div id="loading"><img src="img/loading.gif" alt="loading"/></div>
+
+ </div>
+ <div class="col-md-2">
+   <div class="container">   
+   <a class="btn btn-default" href="addAlbum.html" role="button">Add an Album</a>
+   </div>
+
+   <div class="row" style="margin-top: 2em;">
+   <div class="alert alert-info alert-dismissible" role="alert">
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+     <strong>Note</strong> You can click an album title to get more information on the album.
+   </div>
+   </div>
+
+ </div>
+</div>
+
+
+</div>
+</body>
+</html>
