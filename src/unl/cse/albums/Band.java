@@ -79,7 +79,7 @@ public class Band {
 		}
 		
 
-		String query = "SELECT BandName FROM Bands where BandID = ?";
+		String query = "SELECT name FROM Band where bandId = ?";
 
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -89,7 +89,7 @@ public class Band {
 			ps.setInt(1, bandId);
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				b = new Band(bandId, rs.getString("BandName"));
+				b = new Band(bandId, rs.getString("name"));
 			} else {
 				throw new IllegalStateException("no such band with bandId = " + bandId);
 			}
@@ -100,14 +100,14 @@ public class Band {
 			throw new RuntimeException(e);
 		}
 
-		query = "SELECT MusicianFirstName, MusicianLastName, MusicianCountry FROM BandMusicians bm JOIN Musicians m ON bm.MusicianID = m.MusicianID WHERE bm.BandID = ?";
+		query = "SELECT firstName, lastName, country FROM BandMember bm JOIN Musician m ON bm.musicianId = m.musicianId WHERE bm.bandId = ?";
 		
 		try {
 			ps = conn.prepareStatement(query);
 			ps.setInt(1, bandId);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				b.addMember(rs.getString("MusicianLastName") + ", " + rs.getString("MusicianFirstName"));
+				b.addMember(rs.getString("lastName") + ", " + rs.getString("firstName"));
 			}
 			rs.close();
 		} catch (SQLException e) {
