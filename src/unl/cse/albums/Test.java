@@ -9,7 +9,7 @@ public class Test {
 		List<Album> disc = Album.getAlbumSummaries();
 
 		for(Album a : disc) {
-			System.out.println(a.getTitle() + " by " + a.getBand().getName() + ", " + a.getYear());
+			System.out.println(a.getTitle() + " (id = "+a.getAlbumId()+") by " + a.getBand().getName() + " (id = "+a.getBand().getBandId()+"), " + a.getYear());
 		}
 		
 	}

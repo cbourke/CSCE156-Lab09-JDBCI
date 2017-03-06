@@ -69,10 +69,17 @@ public class Album {
 	}
 	
 	/**
-	 * Returns a list of all albums in the database.  However, 
-	 * only the title, year, and band name are loaded from the
-	 * database.
-	 * 
+	 * Returns a list of all albums in the database.  However, this
+	 * is only a summary so only the following items need to be loaded
+	 * from the database:
+	 * <ul>
+	 *   <li>Album ID</li>
+	 *   <li>Album Title</li>
+	 *   <li>Album Year</li>
+	 *   <li>Band ID</li>
+	 *   <li>Band Name</li>
+	 * </ul>
+	 *   
 	 * @return
 	 */
 	public static List<Album> getAlbumSummaries() {
